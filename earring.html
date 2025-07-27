@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earrings | Zariné</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f5c518;
+      margin: 40px 0 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(245, 197, 24, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(245, 197, 24, 0.4);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      color: #f5c518;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .product-info span {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background: #f5c518;
+      color: #111;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navigation Starting -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index1.html" style="color:#f5c518; text-decoration: none;">Zariné</a>
+    </div>
+
+    <ul id="menu">
+      <li><a href="index1.html">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleCategory(event)">Category</a>
+        <ul class="dropdown-menu">
+          <li><a href="earring.html">Earring</a></li>
+          <li><a href="pendant.html">Pendant</a></li>
+          <li><a href="rings.html">Rings</a></li>
+          <li><a href="chain.html">Chain</a></li>
+          <li><a href="bangles.html">Bangles</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" target="_blank">About Us </a></li>
+      <li><a href="contact.html" target="_blank">Contact </a></li>
+    </ul>
+    <div class="actions">
+
+
+      <div class="cart-wrapper">
+        <i class="fas fa-shopping-bag icon-btn" onclick="window.location.href='cart.html'"></i>
+        <span class="badge">3</span>
+      </div>
+
+      <button class="login-btn"><a href="login.html" target="_blank">Login</a></button>
+    </div>
+  </nav>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+    });
+  </script>
+  <!-- navigation Ending -->
+  <h1>Gold Earrings Collection</h1>
+
+  <div class="product-grid" id="productGrid">
+
+    <div class="product-card">
+      <img src="Royal Jhumka Drops.png" alt="Earring 1" />
+      <div class="product-info">
+        <h3>Royal Jhumka Drops</h3>
+        <p>Traditional gold jhumka with filigree work</p>
+        <span>₹14,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Floral Studs.png" alt="Earring 2" />
+      <div class="product-info">
+        <h3>Floral Studs</h3>
+        <p>T Gold floral stud earrings on satin cloth, close-up, soft shadows</p>
+        <span>₹7,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Pearl Drop Chandbali.png" alt="Earring 3" />
+      <div class="product-info">
+        <h3>Pearl Drop Chandbali</h3>
+        <p>Chandbali with hanging pearls and antique polish</p>
+        <span>₹16,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Meenakari Hoops.png" alt="Earring 4" />
+      <div class="product-info">
+        <h3>Meenakari Hoops</h3>
+        <p>Traditional hoops with colorful meenakari work</p>
+        <span>₹9,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Diamond Halo Studs.png" alt="Earring 5" />
+      <div class="product-info">
+        <h3>Diamond Halo Studs</h3>
+        <p>Solitaire center with diamond halo</p>
+        <span>₹18,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Kundan Teardrops.png" alt="Earring 6" />
+      <div class="product-info">
+        <h3>Diamond Drop Earrings</h3>
+        <p>22K gold with real diamond accents.</p>
+        <span>₹34,999</span>
+      </div>
+
+    </div>
+    <div class="product-card">
+      <img src="Lightweight Gold Hoops.png" alt="Earring 7" />
+      <div class="product-info">
+        <h3>Lightweight Gold Hoops</h3>
+        <p>Simple everyday hoops in 22k gold</p>
+        <span>₹16,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Emerald Dome Jhumkas.png" alt="Earring 8" />
+      <div class="product-info">
+        <h3>Emerald Dome Jhumkas</h3>
+        <p>Jhumkas with green emerald detailing</p>
+        <span>₹15,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Ruby Studs.png" alt="Earring 9" />
+      <div class="product-info">
+        <h3>Ruby Studs</h3>
+        <p>Red ruby stone set in a minimal gold stud</p>
+        <span>₹11,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Platinum Teardrop Earrings.png" alt="Earring 10" />
+      <div class="product-info">
+        <h3>Platinum Teardrop Earrings</h3>
+        <p>Slim platinum base with hanging diamonds</p>
+        <span>₹22,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Antique Peacock Jhumkas.png" alt="Earring 11" />
+      <div class="product-info">
+        <h3>Antique Peacock Jhumkas</h3>
+        <p> Peacock-shaped jhumkas with antique gold finish.</p>
+        <span>₹19,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Oval Hoops with CZ Stones.png" alt="Earring 12" />
+      <div class="product-info">
+        <h3> Oval Hoops with CZ Stones</h3>
+        <p>Gold oval hoops with cubic zirconia lining</p>
+        <span>₹12,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Triple Drop Gold Earrings.png" alt="Earring 13" />
+      <div class="product-info">
+        <h3>Triple Drop Gold Earrings</h3>
+        <p>Cascading triple-drop pattern in pure gold</p>
+        <span>₹10,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Feather Design Studs.png" alt="Earring 14" />
+      <div class="product-info">
+        <h3>Feather Design Studs</h3>
+        <p>Feather-style studs with carved elegance</p>
+        <span>₹8,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Long Chain Earrings.png" alt="Earring 15" />
+      <div class="product-info">
+        <h3>Long Chain Earrings</h3>
+        <p>Dainty gold chain drops with minimal charms</p>
+        <span>₹13,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Crystal Circle Studs.png" alt="Earring 16" />
+      <div class="product-info">
+        <h3>Crystal Circle Studs</h3>
+        <p>Circular studs with tiny crystal inlays</p>
+        <span>₹9,999</span>
+      </div>
+    </div>
+  </div>
+  <!-- foote Starting -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-section">
+        <h3>Zariné</h3>
+        <p>Crafting elegance with precision. Explore our fine jewelry collections made to shine.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: support@zarine.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Location: Surat, India</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Zariné. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- foote Ending -->
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendants | Zariné</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f5c518;
+      margin: 40px 0 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(245, 197, 24, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(245, 197, 24, 0.4);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      color: #f5c518;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .product-info span {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background: #f5c518;
+      color: #111;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navigation Starting -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index1.html" style="color:#f5c518; text-decoration: none;">Zariné</a>
+    </div>
+
+    <ul id="menu">
+      <li><a href="index1.html">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleCategory(event)">Category</a>
+        <ul class="dropdown-menu">
+          <li><a href="earring.html">Earring</a></li>
+          <li><a href="pendant.html">Pendant</a></li>
+          <li><a href="rings.html">Rings</a></li>
+          <li><a href="chain.html">Chain</a></li>
+          <li><a href="bangles.html">Bangles</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" target="_blank">About Us </a></li>
+      <li><a href="contact.html" target="_blank">Contact </a></li>
+    </ul>
+    <div class="actions">
+
+
+      <div class="cart-wrapper">
+        <i class="fas fa-shopping-bag icon-btn" onclick="window.location.href='cart.html'"></i>
+        <span class="badge">3</span>
+      </div>
+
+      <button class="login-btn"><a href="login.html" target="_blank">Login</a></button>
+    </div>
+  </nav>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+    });
+  </script>
+  <!-- navigation Eanding -->
+  <h1>Gold Pendants Collection</h1>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="Solitaire Spark Pendant.png" alt="Pendant 1" />
+      <div class="product-info">
+        <h3>Solitaire Spark Pendant</h3>
+        <p>EClassic solitaire diamond in a minimal gold frame</p>
+        <span>₹18,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Heart of Gold Pendant.png" alt="Pendant 2" />
+      <div class="product-info">
+        <h3>Heart of Gold Pendant</h3>
+        <p>Elegant heart-shaped pendant with gold polish.</p>
+        <span>₹13,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Floral Diamond Cluster Pendant.png" alt="Pendant 3" />
+      <div class="product-info">
+        <h3>Minimal Bar Pendant</h3>
+        <p>Petal-style cluster of fine diamonds in floral form</p>
+        <span>₹21,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Infinity Loop Pendant.png" alt="Pendant 4" />
+      <div class="product-info">
+        <h3> Infinity Loop Pendant</h3>
+        <p>Symbolic infinity shape in pure 22k gold</p>
+        <span>₹10,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Moonstone Teardrop Pendant.png" alt="Pendant 5" />
+      <div class="product-info">
+        <h3> Moonstone Teardrop Pendant</h3>
+        <p>Glowing teardrop pendant with moonstone center</p>
+        <span>₹17,799</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Crown Jewel Pendant.png" alt="Pendant 6" />
+      <div class="product-info">
+        <h3>Crown Jewel Pendant</h3>
+        <p>Royal crown-shaped pendant with crystal accent</p>
+        <span>₹19,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Personalized Alphabet Pendant (M).png" alt="Pendant 7" />
+      <div class="product-info">
+        <h3>Personalized Alphabet Pendant (M)</h3>
+        <p>Traditional peacock inspired intricate design.</p>
+        <span>₹22,799</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Radiant Circle CZ Pendant.png" alt="Pendant 8" />
+      <div class="product-info">
+        <h3>Radiant Circle CZ Pendant</h3>
+        <p>Round gold frame filled with cubic zirconia</p>
+        <span>₹11,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Dual Leaf Gold Pendant.png" alt="Pendant 9" />
+      <div class="product-info">
+        <h3> Dual Leaf Gold Pendant</h3>
+        <p>Double leaf motif with soft curves</p>
+        <span>₹8,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Angel Wing Pendant.png" alt="Pendant 10" />
+      <div class="product-info">
+        <h3>Angel Wing Pendant</h3>
+        <p> Feathered wing style, symbolizing purity</p>
+        <span>₹13,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Kundan Emerald Pendant.png" alt="Pendant 11" />
+      <div class="product-info">
+        <h3>Kundan Emerald Pendant</h3>
+        <p>Traditional Kundan with green emerald center</p>
+        <span>₹16,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Starburst Diamond Pendant.png" alt="Pendant 12" />
+      <div class="product-info">
+        <h3>Starburst Diamond Pendant</h3>
+        <p>Diamond star-shaped pendant with radiant finish</p>
+        <span>₹20,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Butterfly Charm Pendant.png" alt="Pendant 13" />
+      <div class="product-info">
+        <h3>Butterfly Charm Pendant</h3>
+        <p> Light and playful butterfly outline in gold</p>
+        <span>₹7,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Om Spiritual Pendant.png" alt="Pendant 14" />
+      <div class="product-info">
+        <h3>Om Spiritual Pendant</h3>
+        <p>Traditional “Om” symbol in antique gold</p>
+        <span>₹9,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Tear of Love Pendant.png" alt="Pendant 15" />
+      <div class="product-info">
+        <h3>Tear of Love Pendant</h3>
+        <p>Long teardrop pendant with ruby crystal</p>
+        <span>₹15,299</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Minimal Bar Pendant.png" alt="Pendant 16" />
+      <div class="product-info">
+        <h3>Minimal Bar Pendant</h3>
+        <p> Straight gold bar, perfect for daily wear</p>
+        <span>₹6,499</span>
+      </div>
+    </div>
+  </div>
+  <!-- foote Starting -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-section">
+        <h3>Zariné</h3>
+        <p>Crafting elegance with precision. Explore our fine jewelry collections made to shine.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: support@zarine.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Location: Surat, India</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Zariné. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- foote Ending -->
+</body>
+
+</html>

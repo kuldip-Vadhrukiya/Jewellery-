@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rings | Zariné</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+        body,
+    html {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    h1 {
+      text-align: center;
+      color: #f5c518;
+      margin: 40px 0 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(245, 197, 24, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(245, 197, 24, 0.4);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      color: #f5c518;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .product-info span {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background: #f5c518;
+      color: #111;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- navigation Starting -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index1.html" style="color:#f5c518; text-decoration: none;">Zariné</a>
+    </div>
+
+    <ul id="menu">
+      <li><a href="index1.html">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleCategory(event)">Category</a>
+        <ul class="dropdown-menu">
+          <li><a href="earring.html">Earring</a></li>
+          <li><a href="pendant.html">Pendant</a></li>
+          <li><a href="rings.html">Rings</a></li>
+          <li><a href="chain.html">Chain</a></li>
+          <li><a href="bangles.html">Bangles</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" target="_blank">About Us </a></li>
+      <li><a href="contact.html" target="_blank">Contact  </a></li>
+    </ul>
+    <div class="actions">
+      
+
+      <div class="cart-wrapper">
+        <i class="fas fa-shopping-bag icon-btn" onclick="window.location.href='cart.html'"></i>
+        <span class="badge">3</span>
+      </div>
+
+      <button class="login-btn"><a href="login.html" target="_blank">Login</a></button>
+    </div>
+  </nav>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+    });
+  </script>
+  <!-- navigation Ending -->
+  <h1>Elegant Gold Rings</h1>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="Classic Diamond Solitaire Ring.png" alt="Ring 1" />
+      <div class="product-info">
+        <h3>Classic Diamond Solitaire Ring</h3>
+        <p>Timeless single diamond set in 18K gold</p>
+        <span>₹24,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Rose Gold Infinity Ring.png" alt="Ring 2" />
+      <div class="product-info">
+        <h3>Rose Gold Infinity Ring</h3>
+        <p>Elegant infinity design with rose gold finish</p>
+        <span>₹17,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Halo Cluster Engagement Ring.png" alt="Ring 3" />
+      <div class="product-info">
+        <h3>Halo Cluster Engagement Ring</h3>
+        <p>Central diamond surrounded by sparkling halo</p>
+        <span>₹29,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Dual Band Twist Ring.png" alt="Ring 4" />
+      <div class="product-info">
+        <h3>Dual Band Twist Ring</h3>
+        <p>Two intertwined gold bands symbolizing unity</p>
+        <span>₹14,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Emerald Cut Royal Ring.png" alt="Ring 5" />
+      <div class="product-info">
+        <h3> Emerald Cut Royal Ring</h3>
+        <p>Emerald cut diamond set in platinum band</p>
+        <span>₹32,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Leaf Vine Gold Ring.png" alt="Ring 6" />
+      <div class="product-info">
+        <h3>Leaf Vine Gold Ring</h3>
+        <p>Nature-inspired vine ring with leaf detailing</p>
+        <span>₹11,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Ruby Crown Ring.png" alt="Ring 7" />
+      <div class="product-info">
+        <h3>Ruby Crown Ring</h3>
+        <p>Bold ruby stone with crown prongs setting</p>
+        <span>₹26,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Minimal Geometric Ring.png" alt="Ring 8" />
+      <div class="product-info">
+        <h3>Minimal Geometric Ring</h3>
+        <p>Sleek modern design with geometric cut</p>
+        <span>₹9,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Open Band Adjustable Ring.png" alt="Ring 9" />
+      <div class="product-info">
+        <h3>Open Band Adjustable Ring</h3>
+        <p>Adjustable open band ring for custom fit</p>
+        <span>₹7,999</span>0
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Sapphire Oval Halo Ring.png" alt="Ring 10" />
+      <div class="product-info">
+        <h3>Sapphire Oval Halo Ring</h3>
+        <p>Oval sapphire surrounded by fine diamonds</p>
+        <span>₹28,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Pearl Nest Ring.png" alt="Ring 11" />
+      <div class="product-info">
+        <h3>Pearl Nest Ring</h3>
+        <p>Central pearl set in curved gold nest design</p>
+        <span>₹12,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Antique Kundan Ring.png" alt="Ring 12" />
+      <div class="product-info">
+        <h3>Antique Kundan Ring</h3>
+        <p>Traditional Kundan design with multistone finish</p>
+        <span>₹15,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Heart-Shaped Diamond Ring.png" alt="Ring 13" />
+      <div class="product-info">
+        <h3>Heart-Shaped Diamond Ring</h3>
+        <p>Romantic heart-cut diamond in gold setting</p>
+        <span>₹19,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Princess Cut Engagement Ring.png" alt="Ring 14" />
+      <div class="product-info">
+        <h3>Princess Cut Engagement Ring</h3>
+        <p>Modern princess cut diamond in sleek band</p>
+        <span>₹27,999</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Multi-Stone Spiral Ring.png" alt="Ring 15" />
+      <div class="product-info">
+        <h3>Multi-Stone Spiral Ring</h3>
+        <p>Spiraled band with small diamonds and crystals</p>
+        <span>₹16,499</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Black Onyx Statement Ring.png" alt="Ring 16" />
+      <div class="product-info">
+        <h3>Black Onyx Statement Ring</h3>
+        <p>Bold black onyx in thick gold bezel</p>
+        <span>₹13,499</span>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const product = { name, price, quantity: 1 };
+      const existing = cart.find(p => p.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`Added to Cart: ${name}`);
+    }
+  </script>
+    <!-- foote Starting -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-section">
+      <h3>Zariné</h3>
+      <p>Crafting elegance with precision. Explore our fine jewelry collections made to shine.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: support@zarine.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Location: Surat, India</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Zariné. All Rights Reserved.</p>
+  </div>
+</footer>
+  <!-- foote Ending -->
+</body>
+</html>

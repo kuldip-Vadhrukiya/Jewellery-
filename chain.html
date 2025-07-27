@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chains | Zariné</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f5c518;
+      margin: 40px 0 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(245, 197, 24, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(245, 197, 24, 0.4);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      color: #f5c518;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .product-info span {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background: #f5c518;
+      color: #111;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navigation Starting -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index1.html" style="color:#f5c518; text-decoration: none;">Zariné</a>
+    </div>
+
+    <ul id="menu">
+      <li><a href="index1.html">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="toggleCategory(event)">Category</a>
+        <ul class="dropdown-menu">
+          <li><a href="earring.html">Earring</a></li>
+          <li><a href="pendant.html">Pendant</a></li>
+          <li><a href="rings.html">Rings</a></li>
+          <li><a href="chain.html">Chain</a></li>
+          <li><a href="bangles.html">Bangles</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" target="_blank">About Us </a></li>
+      <li><a href="contact.html" target="_blank">Contact </a></li>
+    </ul>
+    <div class="actions">
+
+
+      <div class="cart-wrapper">
+        <i class="fas fa-shopping-bag icon-btn" onclick="window.location.href='cart.html'"></i>
+        <span class="badge">3</span>
+      </div>
+
+      <button class="login-btn"><a href="login.html" target="_blank">Login</a></button>
+    </div>
+  </nav>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+  <script>
+    function toggleCategory(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+    });
+  </script>
+  <!-- navigation Ending -->
+  <h1>Gold Chain Collection</h1>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="Box Link Chain.png" alt="Chain 1" />
+      <div class="product-info">
+        <h3>Box Link Chain</h3>
+        <p>Elegant gold chain with crisp box-link style for a classic everyday look.</p>
+        <span>₹12,499</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Cuban Chain.png" alt="Chain 2" />
+      <div class="product-info">
+        <h3>Cuban Chain</h3>
+        <p>Thick and bold Cuban chain for a strong luxurious statement.</p>
+        <span>₹18,999</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Twisted Rope Chain.png" alt="Chain 3" />
+      <div class="product-info">
+        <h3>Twisted Rope Chain</h3>
+        <p>Delicately twisted rope chain in polished gold for graceful elegance.</p>
+        <span>₹13,799</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Bead Ball Chain.png" alt="Chain 4" />
+      <div class="product-info">
+        <h3>Bead Ball Chain</h3>
+        <p>Minimal gold bead chain with smooth spherical links for a subtle charm.</p>
+        <span>₹9,499</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Snake Chain.png" alt="Chain 5" />
+      <div class="product-info">
+        <h3>Snake Chain</h3>
+        <p>Sleek and smooth snake-style gold chain with a radiant mirror-like finish.</p>
+        <span>₹14,299</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Herringbone Chain.png" alt="Chain 6" />
+      <div class="product-info">
+        <h3>Herringbone Chain</h3>
+        <p>Flat and reflective herringbone chain for bold yet sleek appearance.</p>
+        <span>₹16,999</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Singapore Chain.png" alt="Chain 7" />
+      <div class="product-info">
+        <h3>Singapore Chain</h3>
+        <p>Twisted and woven Singapore chain for a feminine and modern look.</p>
+        <span>₹10,499</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Double Curb Chain.png" alt="Chain 8" />
+      <div class="product-info">
+        <h3>Double Curb Chain</h3>
+        <p>Stylish double-curb chain with a strong interlock design.</p>
+        <span>₹15,299</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Figaro Chain.png" alt="Chain 9" />
+      <div class="product-info">
+        <h3>Figaro Chain</h3>
+        <p>Classic figaro design with alternating links for a timeless appeal.</p>
+        <span>₹12,899</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Wheat Chain.png" alt="Chain 10" />
+      <div class="product-info">
+        <h3>Wheat Chain</h3>
+        <p>Interwoven wheat-style chain with strong yet flexible structure.</p>
+        <span>₹13,999</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Cable Chain.png" alt="Chain 11" />
+      <div class="product-info">
+        <h3>Cable Chain</h3>
+        <p>Simple and sleek cable chain ideal for layering or pendants.</p>
+        <span>₹8,799</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Venetian Chain.png" alt="Chain 12" />
+      <div class="product-info">
+        <h3>Venetian Chain</h3>
+        <p>Smooth and boxy venetian chain with polished golden shine.</p>
+        <span>₹11,999</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Rolo Chain.png" alt="Chain 13" />
+      <div class="product-info">
+        <h3>Rolo Chain</h3>
+        <p>Uniform round links in this rolo chain add bold and balanced look.</p>
+        <span>₹10,299</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Anchor Chain.png" alt="Chain 14" />
+      <div class="product-info">
+        <h3>Anchor Chain</h3>
+        <p>Inspired by marine links, this anchor chain reflects strength and elegance.</p>
+        <span>₹12,199</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Mariner Chain.png" alt="Chain 15" />
+      <div class="product-info">
+        <h3>Mariner Chain</h3>
+        <p>Flat oval mariner chain, bold yet stylish with smooth finish.</p>
+        <span>₹13,499</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Foxtail Chain.png" alt="Chain 16" />
+      <div class="product-info">
+        <h3>Foxtail Chain</h3>
+        <p>Intricate foxtail weave with fine craftsmanship and graceful movement.</p>
+        <span>₹14,799</span>
+      </div>
+    </div>
+  </div>
+  <!-- foote Starting -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-section">
+        <h3>Zariné</h3>
+        <p>Crafting elegance with precision. Explore our fine jewelry collections made to shine.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: support@zarine.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Location: Surat, India</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Zariné. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- foote Ending -->
+</body>
+
+</html>
